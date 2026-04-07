@@ -18,6 +18,7 @@ Each file is a self-contained agent — no pip install, no npm install, just pur
 | [`router_agent.py`](router_agent.py) | Intent Routing / Mixture of Agents | Python | ~60 |
 | [`guardrail_agent.py`](guardrail_agent.py) | Safety Guardrails & Output Validation | Python | ~50 |
 | [`chain_agent.sh`](chain_agent.sh) | Agent Chaining / Pipeline | Bash | ~50 |
+| [`edge_agent.py`](edge_agent.py) | Edge/Embedded Agent Loop | Python | ~200 |
 
 ## Quick Start
 
@@ -51,6 +52,15 @@ Input/output validation layers that prevent agents from doing harmful things. De
 
 ### 6. Agent Chain (`chain_agent.sh`)
 Piping agents together in a pipeline where each agent's output feeds the next. Shows how complex workflows emerge from simple composition.
+
+### 7. Edge Agent (`edge_agent.py`)
+The embedded/edge agent pattern — runs entirely on-device with no LLM API. Demonstrates **Sense → Think → Act → Remember** with simulated sensors, rule-based reasoning, actuator control, EEPROM-like memory, and battery-aware power management. This is how agents work on microcontrollers and IoT devices.
+
+```bash
+# No API key needed! Pure local simulation.
+python edge_agent.py 40          # Run 40 ticks
+python edge_agent.py --verbose   # Full output with memory dump
+```
 
 ## Why Single-File?
 
